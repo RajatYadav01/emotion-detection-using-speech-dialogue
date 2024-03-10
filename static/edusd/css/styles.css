@@ -1,0 +1,372 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;430;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;0,600;0,700;0,800;1,500;1,600;1,700;1,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@320;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* { 
+    box-sizing: border-box;
+}
+
+/* index.html , homepage.html and recordings.html style */
+body {
+    background-color: #eeeeee;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+#heading {
+    text-align: center;
+    font: 4em 'Poiret One', cursive;
+    margin: 0.1em 0 0.15em 0;
+}
+
+.navigation {
+    background-color:  #a0a0a0;
+    overflow: auto;
+}
+
+.navigation a {
+    float: left;
+    padding: 0.5em;
+    color: #ffffff;
+    font: 1.10em 'Roboto', sans-serif;
+    text-decoration: none;
+    width: 12.5%;
+    text-align: center;
+}
+
+.navigation  a:hover {
+    background-color: #000000;
+}
+
+.navigation  a.active {
+    background-color: #1E90FF;
+}
+
+/* homepage.html style */
+.record {
+    margin: 0.5em 1.5em 1em 1.5em;
+}
+
+.recorder {
+    border: 0.2em solid #000000;
+    margin: 0.5em 0 0.5em 0;
+}
+
+#subheading1 {
+    position: relative;
+    bottom: 0.5em;
+    width: 100%;
+    text-align: center;
+    font: normal 1.16em 'Poppins', sans-serif;
+}
+
+#start {
+    display: inline-block;
+    position: relative;
+    left: 25%;
+    background-color: #4CAF50;
+    color: #ffffff;
+    padding: 0.6em 1.6em;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.05em;
+    margin: 0.4em 0.2em;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border: 0.1em solid #4CAF50;
+    border-radius: 0.5em;
+}
+
+#start.button:hover {
+    background-color:  #23711e;
+}
+
+#start.button:disabled {
+    background-color:  #86e58c;
+    cursor: not-allowed;
+}
+
+#blink {
+    position: relative;
+    top: 0.1em;
+    left: 42%;
+    width: 1em;
+    height: 1em;
+    background-color: #ff0000;
+    border-radius: 50%;
+    border: 0.05em solid #000000;
+}
+
+#timer {
+    display: inline-block;
+    position: relative;
+    left: 42.25%;
+}
+
+#stop {
+    display: inline-block;
+    position: relative;
+    left: 59%;
+    background-color: #ff2323;
+    color: white;
+    padding: 0.6em 1.6em;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.05em;
+    margin: 0.4em 0.2em;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border: 0.1em solid #ff2323;
+    border-radius: 0.5em;
+}
+
+#stop.button:hover {
+    background-color:  #8b0404;
+}
+
+#stop.button:disabled {
+    background-color:  #e68281;
+    cursor: not-allowed;
+}
+
+#toast {
+    visibility: hidden; 
+    min-width: 15.5em; 
+    margin-left: -125px; 
+    background-color: #000000; 
+    color: #ffffff; 
+    text-align: center; 
+    border-radius: 2px; 
+    padding: 16px; 
+    position: fixed; 
+    z-index: 1; 
+    left: 40%; 
+    bottom: 30px;
+}
+
+#toast.show {
+    visibility: visible; 
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+}
+
+.converter {
+    border: 0.2em solid #000000;
+    margin-bottom: 0.5em;
+}
+
+#subheading2 {
+    position: relative;
+    bottom: 0.5em;
+    width: 100%;
+    text-align: center;
+    font: normal 1.16em 'Poppins', sans-serif;
+}
+
+#convert {
+    display: inline-block;
+    position: relative;
+    bottom: 4.5em;
+    left: 25%;
+    background-color: #4CAF50;
+    border: 0;
+    color: #ffffff;
+    padding: 0.6em 1.6em;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.05em;
+    margin: 0.4em 0.2em;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border: 0.1em solid #4CAF50;
+    border-radius: 0.5em;
+}
+
+#convert.button:hover {
+    background-color:  #23711e;
+}
+
+#loader1 {
+    box-sizing: unset;
+    display: inline-block;
+    visibility: hidden;
+    position: relative;
+    bottom: 4.4em;
+    left: 26%;
+    border-radius: 50%;
+    border: 0.4em solid  #b1b1b1;
+    border-top: 0.4em solid  #00a6ff;
+    border-right: 0.4em solid  #00a6ff;
+    width: 0.8em;
+    height: 0.8em;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#text {
+    display: inline-block;
+    position: relative;
+    left: 55%;
+    background-color: #ffffff;
+    border: 0.1em solid #000000;
+    min-height: 10em;
+    overflow: auto; 
+    resize: both;
+    width: 20em;
+    font: 1.1em 'Raleway', sans-serif;
+    color:#000000;
+    padding: 0.25em;
+}
+
+#text:empty:before{
+    content: attr(placeholder);
+    color:  #909090;
+    font: normal 100 1em 'Roboto', sans-serif;
+}
+
+.finder{
+    border: 0.2em solid #000000;
+}
+
+#subheading3 {
+    position: relative;
+    bottom: 0.5em;
+    width: 100%;
+    text-align: center;
+    font: normal 1.16em 'Poppins', sans-serif;
+}
+
+#find {
+    display: inline-block;
+    position: relative;
+    bottom: 4.5em;
+    left: 25%;
+    background-color: #4CAF50;
+    border: 0;
+    color: white;
+    padding: 0.6em 1.6em;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.05em;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border: 0.1em solid #4CAF50;
+    border-radius: 0.5em; 
+}
+
+#find.button:hover {
+    background-color:  #23711e;
+}
+
+#loader2 {
+    box-sizing: unset;
+    display: inline-block;
+    visibility: hidden;
+    position: relative;
+    left: 26%;
+    bottom: 4.4em;
+    border-radius: 50%;
+    border: 0.4em solid  #b1b1b1;
+    border-top: 0.4em solid  #00a6ff;
+    border-right: 0.4em solid  #00a6ff;
+    width: 0.8em;
+    height: 0.8em;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#emotions {
+    display: inline-block;
+    position: relative;
+    left: 55%;
+    background-color: #ffffff;
+    border: 0.1em solid #000000;
+    min-height: 10em;
+    overflow: auto; 
+    resize: both;
+    width: 20em;
+    font: 1.1em 'Raleway', sans-serif;
+    color:#000000;
+    padding: 0.25em;
+    margin: 0.5em 2em;
+}
+
+#emotions:empty:before{
+    content: attr(placeholder);
+    color:  #909090;
+    font: normal 100 1em 'Roboto', sans-serif;
+}
+
+/* recordings.html style */
+#heading_recordings{
+    position: relative;
+    left: 42%;
+    font: bold 1.5em 'Manrope', sans-serif;
+    padding: 0.4em;
+    margin: 0.1em 0 0.1em 0;
+}
+
+table {
+    position: relative;
+    left: 4.5em;
+    width: 90%;
+    font: 1em 'Montserrat', sans-serif;
+    overflow: auto;
+}
+
+table, th, td {
+    border: 0.1em solid black;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 1em;
+    text-align: left;
+}
+
+table th {
+    background-color: #5d5d5d;
+    color: #ffffff;
+}
+
+table tr {
+    background-color: #ffffff;
+    color: #000000;
+}

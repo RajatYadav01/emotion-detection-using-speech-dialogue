@@ -1,0 +1,25 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    <div class="navigation">
+        <a href="{% url 'home' %}">Home</a>
+        <a class="active" href="{% url 'recordings' %}">Recordings</a>
+    </div>
+    <h2 id="heading_recordings">List of Recordings</h2>
+    <table>
+        <tr>
+            <th> S.No. </th>
+            <th> Speech recording </th>
+            <th> Text obtained from speech </th>
+            <th> Emotion detected </th>
+        </tr>
+        {% for obj in eObj %}
+        <tr>
+            <td>{{ obj.id }}</td>
+            <td>{{ obj.speech_label }}</td>
+            <td>{{ obj.speech_text }}</td>
+            <td>{{ obj.speech_emotions }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

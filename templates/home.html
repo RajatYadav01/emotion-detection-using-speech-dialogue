@@ -1,0 +1,37 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="navigation">
+        <a class="active" href="#">Home</a>
+        <a href="{% url 'recordings' %}">Recordings</a>
+    </div>
+    <div class="record">
+        <div class="recorder">
+            <h3 id="subheading1">Recorder</h3>
+            <button id="start" class="button">Start</button>
+            <canvas id="blink"></canvas>
+            <div id="timer"><span id="hours">00</span>:<span id="minutes">00</span>:<span id="seconds">00</span></div>
+            <button id="stop" class="button">Stop</button>
+            <a name="audio_recording" enctype="multipart/form-data"></a>
+            {% csrf_token %}
+            <br><br><br>
+        </div>
+        <div class="converter">
+            <h3 id="subheading2">Speech to text</h3>
+            <button id="convert" class="button">Convert</button>
+            <div id="loader1"></div>
+            <div id="text" contenteditable="true" placeholder="Text obtained from recording"></div>
+            <br><br>
+        </div>
+        <div class="finder">
+            <h3 id="subheading3">Find emotion</h3>
+            <button id="find" class="button">Find</button>
+            <div id="loader2"></div>
+            <div id="emotions" contenteditable="true" placeholder="Detected emotion"></div>
+            <br><br>
+        </div>
+        <div id="toast"></div>
+    </div>
+<script type="text/javascript" src="{% static 'edusd/js/script.js' %}" defer></script>
+{% endblock %}
