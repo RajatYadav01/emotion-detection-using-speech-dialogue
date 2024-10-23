@@ -24,7 +24,17 @@ This project is a web application which takes a speech dialogue as an input in t
    Replace _\<env-name>_ with the desired name for your virtual environment and _/path/to/new/virtual/environment_ with the desired path for your virtual environment.<br /> 
    Instead of using _venv_ tool in Python to create and manage a virtual environment, any other alternative can also be used like _pipenv_, _virtualenv_, _virtualenvwrapper_, etc.<br />
 
-3) Activate the created virtual environment.<br />
+3) Clone the project's repository.<br />
+   ```
+   git clone https://github.com/RajatYadav01/emotion-detection-using-speech-dialogue.git
+   ```
+
+4) Go to the project folder using the CLI.<br />
+   ```
+   cd emotion-detection-using-speech-dialogue
+   ```
+
+5) Activate the created virtual environment.<br />
    For conda in Anaconda:
    ```
    conda activate <env-name>
@@ -34,12 +44,12 @@ This project is a web application which takes a speech dialogue as an input in t
    source /path/to/new/virtual/environment/bin/activate
    ``` 
 
-4) Install all the packages in the activated virtual environment using the _requirements.txt_ file.<br />
+6) Install all the packages in the activated virtual environment using the _requirements.txt_ file.<br />
    ```
    pip install -r requirements.txt
    ```
 
-5) Inside the project directory either create a file with the name _.env_ or rename the file with the name _.env.example_ to _.env_ and intialise all environment variables given in that file with appropriate values.<br />
+7) Inside the project directory either create a file with the name _.env_ or rename the file with the name _.env.example_ to _.env_ and intialise all environment variables given in that file with appropriate values.<br />
    For example, to generate a secret key for the project run the following commands inside the activated virtual environment:
    ```
    from django.core.management.utils import get_random_secret_key
@@ -49,7 +59,7 @@ This project is a web application which takes a speech dialogue as an input in t
    ```
    Copy the generated secret key and paste it in front of the _SECRET_KEY_ variable in _.env_ file.
 
-6) Finally run the following command inside the project directory to run the project and then open the generated server URL in the browser to view the running project.<br />
+8) Finally run the following command inside the project directory to run the project and then open the generated server URL in the browser to view the running project.<br />
    ```
    python manage.py runserver
    ```
